@@ -22,8 +22,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Authenticate to GCP
-        if: ${{ secrets.GCP_SA_KEY != '' }}
         uses: google-github-actions/auth@v2
+        continue-on-error: true
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
