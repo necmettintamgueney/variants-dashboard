@@ -701,7 +701,7 @@ body::before {
 .lts-prop-wrap { margin: 10px 0 4px; }
 .lts-prop-outer { height: 8px; background: var(--surface-3); border-radius: 999px; overflow: hidden; margin: 8px 0 6px; }
 .lts-prop-fill { height: 100%; border-radius: 999px; transition: width .7s cubic-bezier(.2,.7,.2,1); }
-.lts-prop-labels { display: flex; justify-content: space-between; font-size: 11.0px; color: var(--ink-mute); }
+.lts-prop-labels { display: flex; justify-content: space-between; font-size: 12.0px; color: var(--ink-mute); }
 
 /* Cause-style section blocks (learnings) */
 .lts-cause {
@@ -752,19 +752,19 @@ body::before {
 
 /* ── Group Distribution tab ─────────────────────────────────────────── */
 .dist-controls {
-  display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start;
+  display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start;
   background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--radius-lg); padding:14px 20px; margin-bottom:16px;
+  border-radius:var(--radius-lg); padding:10px 16px; margin-bottom:16px;
   box-shadow:var(--shadow-1);
 }
-.dist-ctrl-group { display:flex; flex-direction:column; gap:6px }
+.dist-ctrl-group { display:flex; flex-direction:column; gap:4px }
 .dist-ctrl-label { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute) }
-.dist-pills { display:flex; gap:5px; flex-wrap:wrap }
+.dist-pills { display:flex; gap:4px; flex-wrap:wrap }
 .dist-pill {
-  font-family:var(--font); font-size:13.5px; font-weight:600;
+  font-family:var(--font); font-size:12px; font-weight:600;
   color:var(--ink-soft); background:var(--surface-2);
   border:1px solid var(--border); border-radius:999px;
-  padding:5px 14px; cursor:pointer;
+  padding:3px 11px; cursor:pointer;
   transition:all 140ms ease;
 }
 .dist-pill:hover { color:var(--ink); border-color:var(--border-strong) }
@@ -773,9 +773,9 @@ body::before {
 .dist-pill.era-pre.active    { background:var(--blue-2);  border-color:var(--blue-2);  box-shadow:0 2px 8px rgba(0,80,160,.3) }
 .dist-pill.era-both.active   { background:var(--ink);     border-color:var(--ink) }
 /* platform color overrides */
-.dist-pill.plat-ap.active  { background:var(--fp);  border-color:var(--fp);  box-shadow:0 2px 8px rgba(215,15,100,.3) }
-.dist-pill.plat-sa.active  { background:var(--hs);  border-color:var(--hs);  color:var(--ink); box-shadow:0 2px 8px rgba(255,195,0,.3) }
-.dist-pill.plat-us.active  { background:var(--py);  border-color:var(--py);  box-shadow:0 2px 8px rgba(245,47,65,.3) }
+.dist-pill.plat-ap.active { background:var(--fp);  border-color:var(--fp);  color:#fff; box-shadow:0 2px 10px rgba(215,15,100,.35) }
+.dist-pill.plat-sa.active { background:var(--hs);  border-color:var(--hs);  color:var(--ink); box-shadow:0 2px 10px rgba(255,195,0,.4) }
+.dist-pill.plat-us.active { background:var(--py);  border-color:var(--py);  color:#fff; box-shadow:0 2px 10px rgba(245,47,65,.35) }
 
 /* Chart */
 .dist-chart-wrap {
@@ -950,6 +950,7 @@ thead th[title] { cursor:help; }
           <tr>
             <th title="The variant attribute(s) used to build this group — size = dimension/weight, flavor = taste/variety">Attribute ⓘ</th>
             <th style="text-align:right" title="Number of variant groups the Jun 2026 model created for this attribute type">Jun 2026 groups ⓘ</th>
+            <th style="text-align:right" title="Share of all model-created groups in this selection">% of total ⓘ</th>
             <th style="text-align:right" title="Average number of products per group, for model-created groups">Avg products/group (model) ⓘ</th>
             <th style="text-align:right" title="% of model-created groups with exactly 2 products — the minimum valid group">% with 2 products ⓘ</th>
             <th style="text-align:right" title="Number of variant groups that existed before the Jun 2026 model run">Pre-existing groups ⓘ</th>
@@ -1209,13 +1210,13 @@ filterGroups();
 // [region_code, attr_key, product_count, group_count]
 // attr_key: 0=dimensions_variant, 1=flavor, 2=flavor+dimensions_variant, 3=other
 var DIST_NEW = [["ap",0,2,6685],["ap",0,3,1829],["ap",0,4,762],["ap",0,5,330],["ap",0,6,171],["ap",0,7,87],["ap",0,8,49],["ap",0,9,34],["ap",0,10,20],["ap",0,11,19],["ap",0,12,12],["ap",0,13,7],["ap",0,14,5],["ap",0,15,4],["ap",0,16,2],["ap",0,17,7],["ap",0,19,1],["ap",0,20,2],["ap",0,21,3],["ap",0,22,2],["ap",0,23,1],["ap",0,24,2],["ap",0,26,1],["ap",0,1,19],["ap",1,2,2906],["ap",1,3,828],["ap",1,4,247],["ap",1,5,102],["ap",1,6,51],["ap",1,7,17],["ap",1,8,10],["ap",1,9,8],["ap",1,10,3],["ap",1,11,1],["ap",1,13,1],["ap",1,16,1],["ap",1,20,1],["ap",2,2,1940],["ap",2,3,989],["ap",2,4,468],["ap",2,5,266],["ap",2,6,133],["ap",2,7,87],["ap",2,8,58],["ap",2,9,48],["ap",2,10,25],["ap",2,11,16],["ap",2,12,17],["ap",2,13,7],["ap",2,14,7],["ap",2,15,4],["ap",2,16,4],["ap",2,17,4],["ap",2,18,1],["ap",2,19,2],["ap",2,20,4],["ap",2,21,1],["ap",2,23,2],["ap",2,28,1],["ap",2,30,1],["ap",2,31,1],["ap",2,1,1],["sa",0,2,6494],["sa",0,3,2466],["sa",0,4,1212],["sa",0,5,635],["sa",0,6,394],["sa",0,7,224],["sa",0,8,175],["sa",0,9,103],["sa",0,10,93],["sa",0,11,47],["sa",0,12,51],["sa",0,13,47],["sa",0,14,29],["sa",0,15,27],["sa",0,16,15],["sa",0,17,19],["sa",0,18,7],["sa",0,19,6],["sa",0,20,8],["sa",0,21,9],["sa",0,22,6],["sa",0,23,5],["sa",0,24,7],["sa",0,25,3],["sa",0,26,7],["sa",0,27,1],["sa",0,28,2],["sa",0,29,2],["sa",0,30,3],["sa",0,31,2],["sa",0,32,2],["sa",0,33,2],["sa",0,34,1],["sa",0,36,1],["sa",0,37,1],["sa",0,39,3],["sa",0,40,1],["sa",0,41,1],["sa",0,42,1],["sa",0,43,1],["sa",0,45,2],["sa",0,47,1],["sa",0,59,1],["sa",0,1,4],["sa",1,2,1403],["sa",1,3,645],["sa",1,4,277],["sa",1,5,146],["sa",1,6,53],["sa",1,7,30],["sa",1,8,12],["sa",1,9,10],["sa",1,10,6],["sa",1,11,5],["sa",1,13,4],["sa",1,16,1],["sa",1,17,3],["sa",1,18,1],["sa",1,22,1],["sa",2,2,894],["sa",2,3,617],["sa",2,4,392],["sa",2,5,263],["sa",2,6,162],["sa",2,7,100],["sa",2,8,85],["sa",2,9,54],["sa",2,10,41],["sa",2,11,30],["sa",2,12,25],["sa",2,13,25],["sa",2,14,13],["sa",2,15,18],["sa",2,16,11],["sa",2,17,15],["sa",2,18,9],["sa",2,19,6],["sa",2,20,5],["sa",2,21,8],["sa",2,22,3],["sa",2,23,5],["sa",2,24,5],["sa",2,25,2],["sa",2,26,3],["sa",2,27,4],["sa",2,28,3],["sa",2,29,2],["sa",2,30,1],["sa",2,31,2],["sa",2,32,2],["sa",2,33,1],["sa",2,34,2],["sa",2,35,2],["sa",2,37,1],["sa",2,38,1],["sa",2,39,1],["sa",2,40,1],["sa",2,45,1],["sa",2,46,1],["sa",2,50,2],["sa",2,52,1],["sa",2,63,1],["us",0,2,5249],["us",0,3,2245],["us",0,4,1124],["us",0,5,597],["us",0,6,410],["us",0,7,250],["us",0,8,190],["us",0,9,118],["us",0,10,109],["us",0,11,76],["us",0,12,62],["us",0,13,29],["us",0,14,47],["us",0,15,28],["us",0,16,27],["us",0,17,12],["us",0,18,14],["us",0,19,18],["us",0,20,8],["us",0,21,10],["us",0,22,14],["us",0,23,11],["us",0,24,11],["us",0,25,4],["us",0,26,2],["us",0,27,2],["us",0,28,4],["us",0,29,2],["us",0,30,2],["us",0,31,2],["us",0,32,1],["us",0,33,2],["us",0,34,1],["us",0,35,3],["us",0,36,1],["us",0,37,3],["us",0,38,1],["us",0,39,1],["us",0,41,1],["us",0,42,2],["us",0,43,1],["us",0,45,2],["us",0,46,1],["us",0,48,2],["us",0,49,3],["us",0,57,1],["us",0,65,1],["us",0,1,4],["us",1,2,1332],["us",1,3,477],["us",1,4,183],["us",1,5,83],["us",1,6,28],["us",1,7,12],["us",1,8,4],["us",1,9,4],["us",1,10,3],["us",1,11,2],["us",1,12,3],["us",1,13,1],["us",1,15,1],["us",1,16,1],["us",1,17,1],["us",2,2,1024],["us",2,3,653],["us",2,4,424],["us",2,5,266],["us",2,6,171],["us",2,7,114],["us",2,8,90],["us",2,9,55],["us",2,10,60],["us",2,11,38],["us",2,12,34],["us",2,13,21],["us",2,14,29],["us",2,15,16],["us",2,16,15],["us",2,17,8],["us",2,18,9],["us",2,19,10],["us",2,20,8],["us",2,21,9],["us",2,22,6],["us",2,23,4],["us",2,24,3],["us",2,25,3],["us",2,26,4],["us",2,27,2],["us",2,28,5],["us",2,29,3],["us",2,30,3],["us",2,31,5],["us",2,32,1],["us",2,33,2],["us",2,34,3],["us",2,36,1],["us",2,37,2],["us",2,40,2],["us",2,41,1],["us",2,43,1],["us",2,44,1],["us",2,45,2],["us",2,52,1],["us",2,55,1],["us",2,58,1]];
-var DIST_PRE = [["ap",0,1,1358],["ap",0,2,18285],["ap",0,3,3875],["ap",0,4,1715],["ap",0,5,825],["ap",0,6,516],["ap",0,7,319],["ap",0,8,216],["ap",0,9,149],["ap",0,10,132],["ap",0,11,90],["ap",0,12,83],["ap",0,13,58],["ap",0,14,46],["ap",0,15,38],["ap",0,16,32],["ap",0,17,42],["ap",0,18,16],["ap",0,19,22],["ap",0,20,15],["ap",0,21,15],["ap",0,22,15],["ap",0,23,9],["ap",0,24,9],["ap",0,25,11],["ap",0,26,6],["ap",0,27,7],["ap",0,28,4],["ap",0,29,9],["ap",0,30,3],["ap",0,31,7],["ap",0,32,3],["ap",0,33,4],["ap",0,34,4],["ap",0,35,5],["ap",0,36,1],["ap",0,37,1],["ap",0,39,1],["ap",0,40,1],["ap",0,41,3],["ap",0,42,1],["ap",0,43,3],["ap",0,44,1],["ap",0,45,3],["ap",0,46,2],["ap",0,47,1],["ap",0,53,2],["ap",0,59,1],["ap",0,61,1],["ap",0,75,1],["ap",0,84,1],["ap",0,97,1],["ap",1,1,0],["ap",1,2,231],["ap",1,3,42],["ap",1,4,10],["ap",1,5,2],["ap",1,6,2],["ap",1,7,2],["ap",1,10,2],["ap",1,41,1],["ap",2,1,6],["ap",2,2,408],["ap",2,3,141],["ap",2,4,61],["ap",2,5,19],["ap",2,6,6],["ap",2,7,6],["ap",2,9,3],["ap",2,10,2],["ap",2,14,1],["sa",0,1,8],["sa",0,2,196],["sa",0,3,131],["sa",0,4,83],["sa",0,5,70],["sa",0,6,49],["sa",0,7,40],["sa",0,8,20],["sa",0,9,16],["sa",0,10,7],["sa",0,11,5],["sa",0,12,9],["sa",0,13,7],["sa",0,15,5],["sa",0,16,2],["sa",0,17,2],["sa",0,18,3],["sa",0,29,2],["sa",1,1,7],["sa",1,2,120],["sa",1,3,71],["sa",1,4,58],["sa",1,5,40],["sa",1,6,26],["sa",1,7,18],["sa",1,8,21],["sa",1,9,5],["sa",1,10,7],["sa",1,11,3],["sa",1,13,2],["sa",1,17,3],["sa",1,18,1],["sa",2,2,24],["sa",2,3,21],["sa",2,4,25],["sa",2,5,18],["sa",2,6,11],["sa",2,7,9],["sa",2,8,9],["sa",2,9,4],["sa",2,10,3],["sa",2,11,2],["sa",2,12,4],["sa",2,13,7],["sa",2,19,2],["us",0,1,52],["us",0,2,377],["us",0,3,146],["us",0,4,88],["us",0,5,31],["us",0,6,29],["us",0,7,14],["us",0,8,8],["us",0,9,8],["us",0,10,6],["us",0,11,5],["us",0,13,4],["us",0,14,4],["us",0,15,2],["us",0,16,3],["us",0,40,1],["us",1,2,93],["us",1,3,22],["us",1,4,10],["us",1,5,4],["us",1,8,2],["us",2,1,36],["us",2,2,78],["us",2,3,36],["us",2,4,25],["us",2,5,18],["us",2,6,12],["us",2,7,8],["us",2,9,3],["us",2,10,5]];
+var DIST_PRE = [["ap",0,1,1358],["ap",0,2,18285],["ap",0,3,3875],["ap",0,4,1715],["ap",0,5,825],["ap",0,6,516],["ap",0,7,319],["ap",0,8,216],["ap",0,9,149],["ap",0,10,132],["ap",0,11,90],["ap",0,12,83],["ap",0,13,58],["ap",0,14,46],["ap",0,15,38],["ap",0,16,32],["ap",0,17,42],["ap",0,18,16],["ap",0,19,22],["ap",0,20,15],["ap",0,21,15],["ap",0,22,15],["ap",0,23,9],["ap",0,24,9],["ap",0,25,11],["ap",0,26,6],["ap",0,27,7],["ap",0,28,4],["ap",0,29,9],["ap",0,30,3],["ap",0,31,7],["ap",0,32,3],["ap",0,33,4],["ap",0,34,4],["ap",0,35,5],["ap",0,36,1],["ap",0,37,1],["ap",0,39,1],["ap",0,40,1],["ap",0,41,3],["ap",0,42,1],["ap",0,43,3],["ap",0,44,1],["ap",0,45,3],["ap",0,46,2],["ap",0,47,1],["ap",0,53,2],["ap",0,59,1],["ap",0,61,1],["ap",0,75,1],["ap",0,84,1],["ap",0,97,1],["ap",1,2,231],["ap",1,3,42],["ap",1,4,10],["ap",1,5,2],["ap",1,6,2],["ap",1,7,2],["ap",1,10,2],["ap",1,41,1],["ap",2,1,6],["ap",2,2,408],["ap",2,3,141],["ap",2,4,61],["ap",2,5,19],["ap",2,6,6],["ap",2,7,6],["ap",2,9,3],["ap",2,10,2],["ap",2,14,1],["sa",0,1,8],["sa",0,2,196],["sa",0,3,131],["sa",0,4,83],["sa",0,5,70],["sa",0,6,49],["sa",0,7,40],["sa",0,8,20],["sa",0,9,16],["sa",0,10,7],["sa",0,11,5],["sa",0,12,9],["sa",0,13,7],["sa",0,15,5],["sa",0,16,2],["sa",0,17,2],["sa",0,18,3],["sa",0,29,2],["sa",1,1,7],["sa",1,2,120],["sa",1,3,71],["sa",1,4,58],["sa",1,5,40],["sa",1,6,26],["sa",1,7,18],["sa",1,8,21],["sa",1,9,5],["sa",1,10,7],["sa",1,11,3],["sa",1,13,2],["sa",1,17,3],["sa",1,18,1],["sa",2,2,24],["sa",2,3,21],["sa",2,4,25],["sa",2,5,18],["sa",2,6,11],["sa",2,7,9],["sa",2,8,9],["sa",2,9,4],["sa",2,10,3],["sa",2,11,2],["sa",2,12,4],["sa",2,13,7],["sa",2,19,2],["us",0,1,52],["us",0,2,377],["us",0,3,146],["us",0,4,88],["us",0,5,31],["us",0,6,29],["us",0,7,14],["us",0,8,8],["us",0,9,8],["us",0,10,6],["us",0,11,5],["us",0,13,4],["us",0,14,4],["us",0,15,2],["us",0,16,3],["us",0,40,1],["us",1,2,93],["us",1,3,22],["us",1,4,10],["us",1,5,4],["us",1,8,2],["us",2,1,36],["us",2,2,78],["us",2,3,36],["us",2,4,25],["us",2,5,18],["us",2,6,12],["us",2,7,8],["us",2,9,3],["us",2,10,5]];
 
 var _distPlat = 'all';
 var _distAttr = 'all';
 var _distEra  = 'new';
 
-var ATTR_LABELS = {'0':'Size only','1':'Flavor only','2':'Size + Flavor','3':'Other'};
+var ATTR_LABELS = {'0':'Size only','1':'Flavor only','2':'Size + Flavor'};
 var PLAT_LABELS = {'all':'All platforms','ap':'Foodpanda (APAC)','sa':'HungerStation (SA)','us':'PedidosYa (LATAM)'};
 
 function distSetPlat(btn) {
@@ -1309,17 +1310,7 @@ function renderDist() {
   // Legend
   var legend = document.getElementById('dist-legend');
   legend.innerHTML = '';
-  if (_distEra === 'both') {
-    [['new','linear-gradient(180deg,#4AE8A0,#00A86B)','Jun 2026 model'],
-     ['pre','linear-gradient(180deg,#B7D6EC,#0066B3)','Pre-existing']].forEach(function(d) {
-      var item = document.createElement('div'); item.className = 'dist-legend-item';
-      var dot = document.createElement('div'); dot.className = 'dist-legend-dot';
-      dot.style.background = d[1];
-      item.appendChild(dot);
-      item.appendChild(document.createTextNode(d[2]));
-      legend.appendChild(item);
-    });
-  }
+
 
   // Attr breakdown table (visible when attr=all)
   var attrSec = document.getElementById('dist-attr-section');
@@ -1339,9 +1330,11 @@ function renderDist() {
     }
     var n = calcAttr(DIST_NEW), p = calcAttr(DIST_PRE);
     var tr = document.createElement('tr');
+    var sharePct = primary.total ? Math.round(n.t / primary.total * 100) + '%' : '—';
     tr.innerHTML =
       '<td style="font-weight:600">' + al + '</td>' +
       '<td style="text-align:right">' + n.t.toLocaleString() + '</td>' +
+      '<td style="text-align:right;font-weight:700;color:var(--ink)">' + sharePct + '</td>' +
       '<td style="text-align:right">' + (n.t ? (n.ws/n.t).toFixed(2) : '—') + '</td>' +
       '<td style="text-align:right"><span class="badge badge-green">' + (n.t ? Math.round(n.p2/n.t*100)+'%' : '—') + '</span></td>' +
       '<td style="text-align:right">' + p.t.toLocaleString() + '</td>' +
@@ -1362,7 +1355,7 @@ function renderDist() {
   var mixData = _distEra === 'new' ? DIST_NEW : DIST_PRE;
   var mixTotals = {};
   var mixGrand = 0;
-  MIX_ATTRS.forEach(function(a){ mixTotals[a[0]] = 0; });
+  MIX_ATTRS_DEF.forEach(function(a){ mixTotals[a[0]] = 0; });
   mixData.forEach(function(r){
     if (_distPlat !== 'all' && r[0] !== _distPlat) return;
     var ak = r[1];
@@ -1372,7 +1365,7 @@ function renderDist() {
   var mixSorted = MIX_ATTRS_DEF.map(function(a){ return {k:a[0],label:a[1],cnt:mixTotals[a[0]]||0}; });
   mixSorted.sort(function(a,b){ return b.cnt - a.cnt; });
   // Color: 1st (majority) = DH red, 2nd = muted slate, 3rd = even more muted
-  var MIX_COLORS = ['#D61F26','#9CA3AF','#C9D0D8'];
+  var MIX_COLORS = ['#D61F26','#0066B3','#00A86B'];
   var mixEl = document.getElementById('dist-mix');
   mixEl.innerHTML = '<div class="dist-mix-label">Attribute type mix</div>' +
     '<div class="dist-mix-bar" id="dist-mix-bar"></div>' +
@@ -1409,8 +1402,9 @@ function toggleLtsSection(btn) {
   var card = btn.closest('.lts-card');
   var detail = card ? card.querySelector('.lts-detail') : null;
   if (!detail) return;
+  if (!btn.dataset.defaultLabel) btn.dataset.defaultLabel = btn.textContent;
   var open = detail.classList.toggle('lts-open');
-  btn.textContent = open ? 'Show less ↑' : 'Show full detail →';
+  btn.textContent = open ? 'Show less ↑' : btn.dataset.defaultLabel;
 }
 
 </script></body></html>
