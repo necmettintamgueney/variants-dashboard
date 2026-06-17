@@ -946,7 +946,16 @@ function showTab(id,el){
   document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
   el.classList.add('active');
+  history.replaceState(null,'','#'+id);
 }
+// Deep-link: activate tab from URL hash on load
+(function(){
+  var hash = location.hash.replace('#','');
+  if(hash){
+    var el = document.querySelector('.nav a[onclick*="''+hash+"'""]');
+    if(el){ el.click(); }
+  }
+})();
 function showPlat(id,el){
   document.querySelectorAll('.plat-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.plat-toggle button').forEach(b=>b.classList.remove('active'));
