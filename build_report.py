@@ -636,11 +636,11 @@ h2:first-child { margin-top:0 }
   border-radius:var(--radius-lg); overflow:auto; max-height:560px;
   box-shadow:var(--shadow-1);
 }
-table { width:100%; border-collapse:collapse; font-size:12px }
+table { width:100%; border-collapse:collapse; font-size:15px }
 thead th {
   background:var(--surface-2); color:var(--ink-soft); border-bottom:1px solid var(--border);
-  padding:10px 12px; white-space:nowrap; position:sticky; top:0; z-index:2;
-  text-align:left; font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  padding:11px 13px; white-space:nowrap; position:sticky; top:0; z-index:2;
+  text-align:left; font-size:13.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
 }
 tbody td { padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top }
 tbody tr:last-child td { border-bottom:none }
